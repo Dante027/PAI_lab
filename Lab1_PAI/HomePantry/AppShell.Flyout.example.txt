@@ -1,0 +1,1 @@
+Przykład Flyout (zadanie 4.3) – podmień zawartość AppShell.xaml, przetestuj menu, potem przywróć TabBar.

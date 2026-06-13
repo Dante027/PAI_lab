@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomePantry.Views.Controls.ProductCard">
+
+    <Frame CornerRadius="10" Padding="0" HasShadow="True" BorderColor="{StaticResource PantryGreen}">
+        <VerticalStackLayout Spacing="0">
+            <Label Text="{Binding ProductName}"
+                   BackgroundColor="{StaticResource PantryGreen}"
+                   TextColor="White"
+                   Padding="10"
+                   FontAttributes="Bold"
+                   FontSize="16" />
+            <VerticalStackLayout Padding="12" BackgroundColor="White" Spacing="4">
+                <Label Text="{Binding ProductInfo}" FontSize="14" />
+                <Label Text="{Binding ExpiryDate}" FontSize="12" TextColor="Gray" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Frame>
+
+</ContentView>

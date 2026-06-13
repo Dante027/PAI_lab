@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:HomePantry.ViewModels"
+             xmlns:controls="clr-namespace:HomePantry.Views.Controls"
+             x:Class="HomePantry.Views.PantryPage"
+             x:DataType="viewmodels:PantryInfo"
+             Title="Spiżarnia">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="0,0,0,20">
+            <Grid Padding="20"
+                  RowSpacing="15"
+                  ColumnSpacing="10"
+                  RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="*, *">
+
+                <Label Grid.Row="0" Grid.ColumnSpan="2"
+                       Text="🏠 Domowa Spiżarnia"
+                       Style="{StaticResource HeaderLabelStyle}" />
+
+                <Image Grid.Row="1" Grid.Column="0"
+                       Source="dotnet_bot.png"
+                       WidthRequest="100"
+                       Aspect="AspectFit" />
+
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="{Binding Subtitle}"
+                       FontSize="16"
+                       VerticalOptions="Center" />
+
+                <Label Grid.Row="2" Grid.ColumnSpan="2"
+                       Text="{Binding DateText}"
+                       FontSize="14"
+                       HorizontalOptions="Center" />
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       Text="{Binding ProductCountText}"
+                       FontSize="14" />
+
+                <Label Grid.Row="3" Grid.Column="1"
+                       Text="{Binding ExpiredCountText}"
+                       FontSize="14"
+                       HorizontalOptions="End" />
+
+                <Button Grid.Row="4" Grid.ColumnSpan="2"
+                        Text="Dodaj pierwszy produkt"
+                        Clicked="OnAddFirstProductClicked" />
+            </Grid>
+
+            <VerticalStackLayout Padding="20,0" Spacing="12">
+                <controls:ProductCard ProductName="Mleko 3,2%"
+                                      ProductInfo="2 l · Nabiał"
+                                      ExpiryDate="Ważne do: 12.06.2026" />
+                <controls:ProductCard ProductName="Chleb żytni"
+                                      ProductInfo="1 szt. · Pieczywo"
+                                      ExpiryDate="Ważne do: 05.06.2026" />
+                <controls:ProductCard ProductName="Jabłka"
+                                      ProductInfo="1 kg · Warzywa i owoce"
+                                      ExpiryDate="Ważne do: 10.06.2026" />
+                <controls:ProductCard ProductName="Woda mineralna"
+                                      ProductInfo="6 szt. · Napoje"
+                                      ExpiryDate="Ważne do: 01.01.2027" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

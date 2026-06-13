@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HomePantry.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:HomePantry.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="HomePantry">
+
+    <!-- TabBar: na Androidzie dolny pasek zakładek, na Windows (WinUI) górny pasek – różnica wynika z natywnych handlerów Shell. -->
+
+    <TabBar>
+        <ShellContent Title="Spiżarnia" ContentTemplate="{DataTemplate views:PantryPage}" />
+        <ShellContent Title="Dodaj" ContentTemplate="{DataTemplate views:AddProductPage}" />
+        <ShellContent Title="Kategorie" ContentTemplate="{DataTemplate views:CategoriesPage}" />
+        <ShellContent Title="Ustawienia" ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </TabBar>
+
+</Shell>

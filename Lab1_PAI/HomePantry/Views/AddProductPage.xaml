@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomePantry.Views.AddProductPage"
+             Title="Dodaj produkt">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="12" Padding="20">
+
+            <Label Text="Nowy produkt w spiżarni"
+                   Style="{StaticResource HeaderLabelStyle}" />
+
+            <Entry x:Name="entNazwa" Placeholder="np. Mleko 3,2%" />
+            <Entry x:Name="entIlosc" Placeholder="np. 2" Keyboard="Numeric" />
+            <Entry x:Name="entJednostka" Placeholder="np. szt., l, kg" />
+
+            <Picker x:Name="pickKategoria" Title="Wybierz kategorię" />
+
+            <DatePicker x:Name="dpWaznosc" />
+
+            <Editor x:Name="edtUwagi"
+                    HeightRequest="80"
+                    Placeholder="np. przechowywać w lodówce..." />
+
+            <HorizontalStackLayout Spacing="10">
+                <Switch x:Name="swOtwarte" />
+                <Label Text="Produkt otwarty" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnDodaj"
+                    Text="Dodaj do spiżarni"
+                    Clicked="OnDodajClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
